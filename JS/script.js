@@ -1,11 +1,5 @@
-var a = prompt('podaj zmienna a: ');
+var age = prompt('podaj wiek kota: ');
 
-function test(f) {
-    f();
-}
+var div = document.getElementById('kot');
 
-test(
-    function () {
-        alert('asdfasdf1 ' + a)
-    }
-);
+div.innerHTML = "wiek Twojego to: " + age;
