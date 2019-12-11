@@ -8,10 +8,45 @@ var produkty = [
     " Grunt.js",
     " SASS"
 ];
+var rezultat = document.getElementById("rezultat");
+//Pętla For
+for (let i = 0; i < produkty.length; i++) {
 
-var liczby = [
-    4, 5, -2, -7, 99, 15
-];
+    rezultat.innerHTML += produkty[i] + "<br>";
+}
+
+// Petla while
+
+// var i = 0;
+// while (i < produkty.length) {
+//     rezultat.innerHTML += produkty[i] + "<br>";
+//     i++;
+// }
+
+//var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
+
+//var i = 0;
+// while (0 < kursy.length) {
+//     kursy[i].innerHTML += " Ulubion";
+//     rezultat.innerHTML += kursy[i].innerHTML + "<br>";
+//     i++
+// }
+
+// Pętla Do While
+// wykonuje się chociaż raz pomimo nieprawidłowego warunku
+/*
+var i=125;
+do{
+    alert(i)
+    i++
+
+}while (i<6)
+*/
+
+//Tablica liczb do sortowania
+// var liczby = [
+//     4, 5, -2, -7, 99, 15
+// ];
 
 /*Użyteczne metody na tablicach
 *cocncat - łączy ze sobą dwie tablice
@@ -20,8 +55,8 @@ var liczby = [
 *push popchnąć element na koniec tablicy i zwróci jej długość
 *shift - usuwa pierwszy element z tablicy i zraca go
 *unshift - przesuwa wszystko o jeden i dodaje na początku nowy element
-* sort  - sortuje elementy tablicy tylko stringi 
-    Liczby trzeba posortować po przez przesłanie funkcji anonimowej 
+* sort  - sortuje elementy tablicy tylko stringi
+    Liczby trzeba posortować po przez przesłanie funkcji anonimowej
     liczby.sort(function (a, b) { return a - b; });
     a-b  sortuje rosnąco, gdy b-a malejąco
  *reverse - odwróć kolejność tablicy
@@ -29,18 +64,18 @@ var liczby = [
  * splice (1,3) - oznacza wycięcie od 1, a drugi oznacza ile elementów do wycięcia
   */
 
-var tmp = ["ajax"];
-//document.getElementById("rezultat").innerHTML = produkty.length;
-//document.getElementById("rezultat").innerHTML = produkty.unshift("ajax");
-document.getElementById("rezultat").innerHTML = produkty.sort();
+// var tmp = ["ajax"];
+// //document.getElementById("rezultat").innerHTML = produkty.length;
+// //document.getElementById("rezultat").innerHTML = produkty.unshift("ajax");
+// document.getElementById("rezultat").innerHTML = produkty.sort();
 
-document.getElementById("rezultat").innerHTML = liczby.sort(function (a, b) { return a - b; });
+// document.getElementById("rezultat").innerHTML = liczby.sort(function (a, b) { return a - b; });
 
-document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
-//document.getElementById("rezultat").innerHTML = produkty.push("gulp");
+// document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
+// //document.getElementById("rezultat").innerHTML = produkty.push("gulp");
 
-document.getElementById("rezultat").innerHTML += produkty;
-document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
+// document.getElementById("rezultat").innerHTML += produkty;
+// document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
 // document.getElementById("rezultat").innerHTML = produkty.unshift("Less");
 // document.getElementById("rezultat").innerHTML += produkty;
 //produkty[3] = "PDO";
