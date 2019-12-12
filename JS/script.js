@@ -15,8 +15,16 @@ person = {
     age: 24,
 };
 
-var kursy = document.querySelector("#kursyProgramowania li");
-alert(kursy.innerHTML);
+var kursy = document.querySelectorAll("#kursyProgramowania li");
+for (var i = 0; i < kursy.length; i++) {
+    kursy[i].style.color = "red";
+}
+
+// var kursy = document.querySelectorAll("#kursyProgramowania li");
+// for (var index in kursy) {
+//     kursy[index].style.color = "red";
+// }
+//alert(kursy[2].innerHTML);
 
 // var suma = addNumbers(3, 0, 5, 99);
 
