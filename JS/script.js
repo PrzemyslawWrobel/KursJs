@@ -8,12 +8,45 @@ var produkty = [
     " Grunt.js",
     " SASS"
 ];
-var rezultat = document.getElementById("rezultat");
-//Pętla For
-for (let i = 0; i < produkty.length; i++) {
 
-    rezultat.innerHTML += produkty[i] + "<br>";
-}
+person = {
+    imię: "Arek",
+    nazwisko: "Bla",
+    age: 24,
+};
+
+var kursy = document.querySelector("#kursyProgramowania li");
+alert(kursy.innerHTML);
+
+// var suma = addNumbers(3, 0, 5, 99);
+
+// function addNumbers() {
+//     var suma = 0;
+//     for (i = 0; i < arguments.length; i++) {
+//         suma += arguments[i];
+//     }
+//     return suma;
+// }
+// alert(suma);
+// var rezultat = document.getElementById("rezultat");
+
+// var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
+
+// for (let key in kursy) {
+//     if (typeof (kursy[key]) !== "object")
+//         break;
+//     alert(kursy[key]);
+// }
+
+// //Pętla For
+// for (let i = 0; i < kursy.length; i++) {
+
+//     if (i % 2 !== 0) {
+//         kursy[i].innerHTML = "Parzysty: " + kursy[i].innerHTML;
+//     }else
+//     continue;
+//     //rezultat.innerHTML += produkty[i] + "<br>";
+// }
 
 // Petla while
 
