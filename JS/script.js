@@ -14,16 +14,29 @@
 //     nazwisko: "Bla",
 //     age: 24,
 // };
+window.onload = function () {
+    function fontPlus() {
+        test.className = "fontPlus";
+    }
 
+    function fontMinus() {
+        //this.removeAttribute("class")
+        test.className = "fontMinus";
+    }
+    var test = document.getElementById("test");
+}
 
-function wypiszTekst(tekst) {
-    alert(tekst + "!!!!!!!!!!!!!!!!!!");
-}
-var test = document.getElementById("test");
-test.onclick = function () {
-    alert("Kliknięty");
-    // wypiszTekst("asl;djg'g'as;dlgj");
-}
+// function wypiszTekst(tekst) {
+//     alert(tekst + "!!!!!!!!!!!!!!!!!!");
+// }
+
+// test.onmouseover = zmienKolor;
+// test.onmouseout = zmienKolor2;
+
+// test.onmouseover = function () {
+//     alert("Kliknięty");
+//     // wypiszTekst("asl;djg'g'as;dlgj");
+// }
 
 // /// tworzymy tabliczkę mnożenia
 // var tabliczkaMnożenia = "<table>";
