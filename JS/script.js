@@ -15,10 +15,17 @@ person = {
     age: 24,
 };
 
-var kursy = document.querySelectorAll("#kursyProgramowania li");
-for (var i = 0; i < kursy.length; i++) {
-    kursy[i].style.color = "red";
-}
+// var x = document.createElement("p");
+// x.style.color = "red";
+// x.className = "testowa";
+// x.innerHTML = "nowy tekst";
+
+// var body = document.querySelector("body");
+// var newChildNode = body.appendChild(x);
+// var kursy = document.querySelectorAll("#kursyProgramowania li");
+// for (var i = 0; i < kursy.length; i++) {
+//     kursy[i].style.color = "red";
+// }
 
 // var kursy = document.querySelectorAll("#kursyProgramowania li");
 // for (var index in kursy) {
