@@ -14,6 +14,22 @@ person = {
     nazwisko: "Bla",
     age: 24,
 };
+/// tworzymy tabliczkę mnożenia
+var tabliczkaMnożenia = "<table>";
+
+for (var i = 1; i <= 10; i++) { //ilość wierszy w tabliczce mnożenia
+    tabliczkaMnożenia += "<tr>";
+    for (var j = 1; j <= 10; j++) {//ilość kolumn w tabliczce
+        tabliczkaMnożenia += "<td>" + i * j + "</td>";
+    }
+    tabliczkaMnożenia += "</tr>";
+}
+tabliczkaMnożenia += "</table>";
+
+var rezultat = document.getElementById("rezultat");
+
+rezultat.innerHTML = tabliczkaMnożenia;
+
 
 // var x = document.createElement("p");
 // x.style.color = "red";
