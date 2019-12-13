@@ -1,34 +1,45 @@
 
 
-var produkty = [
-    " PHP",
-    " Mysql",
-    " Javascript",
-    " PDO",
-    " Grunt.js",
-    " SASS"
-];
+// var produkty = [
+//     " PHP",
+//     " Mysql",
+//     " Javascript",
+//     " PDO",
+//     " Grunt.js",
+//     " SASS"
+// ];
 
-person = {
-    imię: "Arek",
-    nazwisko: "Bla",
-    age: 24,
-};
-/// tworzymy tabliczkę mnożenia
-var tabliczkaMnożenia = "<table>";
+// person = {
+//     imię: "Arek",
+//     nazwisko: "Bla",
+//     age: 24,
+// };
 
-for (var i = 1; i <= 10; i++) { //ilość wierszy w tabliczce mnożenia
-    tabliczkaMnożenia += "<tr>";
-    for (var j = 1; j <= 10; j++) {//ilość kolumn w tabliczce
-        tabliczkaMnożenia += "<td>" + i * j + "</td>";
-    }
-    tabliczkaMnożenia += "</tr>";
+
+function wypiszTekst(tekst) {
+    alert(tekst + "!!!!!!!!!!!!!!!!!!");
 }
-tabliczkaMnożenia += "</table>";
+var test = document.getElementById("test");
+test.onclick = function () {
+    alert("Kliknięty");
+    // wypiszTekst("asl;djg'g'as;dlgj");
+}
 
-var rezultat = document.getElementById("rezultat");
+// /// tworzymy tabliczkę mnożenia
+// var tabliczkaMnożenia = "<table>";
 
-rezultat.innerHTML = tabliczkaMnożenia;
+// for (var i = 1; i <= 10; i++) { //ilość wierszy w tabliczce mnożenia
+//     tabliczkaMnożenia += "<tr>";
+//     for (var j = 1; j <= 10; j++) {//ilość kolumn w tabliczce
+//         tabliczkaMnożenia += "<td>" + i * j + "</td>";
+//     }
+//     tabliczkaMnożenia += "</tr>";
+// }
+// tabliczkaMnożenia += "</table>";
+
+// var rezultat = document.getElementById("rezultat");
+
+// rezultat.innerHTML = tabliczkaMnożenia;
 
 
 // var x = document.createElement("p");
