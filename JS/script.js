@@ -14,31 +14,50 @@
 //     nazwisko: "Bla",
 //     age: 24,
 // };
+
+function wykonaj(event, str) {
+    var e = event || window.event;
+    var tmp = document.getElementById("stop");
+    tmp.innerHTML = event.clientX + " " + str;
+    var tooltip = document.getElementById("tooltip");
+    tooltip.style.display = "block";
+    tooltip.style.left = e.clientX + 10 + "px";
+    tooltip.style.top = e.clienty + 10 + "px";
+};
+
 window.onload = function () {
     var test = document.getElementById("test");
-    var stop = document.getElementById("stop");
+    test.onmousemove = function (event) {
+        wykonaj(event, "przesłany tekst");
+    }
 
-    function zmienKolor() {
-        test.className = "zmienKolor";
-    }
-    function zmienKolor2() {
-        this.removeAttribute("class")
-        //test.className = "fontMinus";
-    }
-    function powiekszCzcionke() {
-        var fontSize = parseInt(window.getComputedStyle(this).fontSize);
-        this.style.fontSize = (++fontSize) + "px";
-    }
-    // test.onmouseover = zmienKolor;
-    // test.onmouseout = zmienKolor2;
-    test.addEventListener("mouseover", zmienKolor);
-    test.addEventListener("mouseover", powiekszCzcionke);
-    test.addEventListener("mouseout", zmienKolor2);
 
-    stop.addEventListener("click", function () {
-        test.removeEventListener("mouseover", powiekszCzcionke);
-    });
 }
+
+  // var test = document.getElementById("test");
+    // var stop = document.getElementById("stop");
+
+    // function zmienKolor() {
+    //     test.className = "zmienKolor";
+    // }
+    // function zmienKolor2() {
+    //     this.removeAttribute("class")
+    //     //test.className = "fontMinus";
+    // }
+    // function powiekszCzcionke() {
+    //     var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+    //     this.style.fontSize = (++fontSize) + "px";
+    // }
+    // // test.onmouseover = zmienKolor;
+    // // test.onmouseout = zmienKolor2;
+    // test.addEventListener("mouseover", zmienKolor);
+    // test.addEventListener("mouseover", powiekszCzcionke);
+    // test.addEventListener("mouseout", zmienKolor2);
+
+    // stop.addEventListener("click", function () {
+    //     test.removeEventListener("mouseover", powiekszCzcionke);
+    //});
+
 
 // function fontPlus() {
     //     test.className = "fontPlus";

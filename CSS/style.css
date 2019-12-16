@@ -9,3 +9,10 @@
 .fontMinus{
     font-size: 12px;
 }
+#tooltip{
+    display: none;
+    background-color: teal;
+    position: absolute;
+    width:  150;
+    height: 70;
+}
