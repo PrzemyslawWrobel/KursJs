@@ -15,7 +15,32 @@
 //     age: 24,
 // };
 window.onload = function () {
-    // function fontPlus() {
+    var test = document.getElementById("test");
+    var stop = document.getElementById("stop");
+
+    function zmienKolor() {
+        test.className = "zmienKolor";
+    }
+    function zmienKolor2() {
+        this.removeAttribute("class")
+        //test.className = "fontMinus";
+    }
+    function powiekszCzcionke() {
+        var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+        this.style.fontSize = (++fontSize) + "px";
+    }
+    // test.onmouseover = zmienKolor;
+    // test.onmouseout = zmienKolor2;
+    test.addEventListener("mouseover", zmienKolor);
+    test.addEventListener("mouseover", powiekszCzcionke);
+    test.addEventListener("mouseout", zmienKolor2);
+
+    stop.addEventListener("click", function () {
+        test.removeEventListener("mouseover", powiekszCzcionke);
+    });
+}
+
+// function fontPlus() {
     //     test.className = "fontPlus";
     // }
 
@@ -24,7 +49,7 @@ window.onload = function () {
     //     test.className = "fontMinus";
     // }
     // var test = document.getElementById("test");
-}
+
 
 // function wypiszTekst(tekst) {
 //     alert(tekst + "!!!!!!!!!!!!!!!!!!");
