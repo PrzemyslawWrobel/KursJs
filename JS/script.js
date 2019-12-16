@@ -15,15 +15,15 @@
 //     age: 24,
 // };
 window.onload = function () {
-    function fontPlus() {
-        test.className = "fontPlus";
-    }
+    // function fontPlus() {
+    //     test.className = "fontPlus";
+    // }
 
-    function fontMinus() {
-        //this.removeAttribute("class")
-        test.className = "fontMinus";
-    }
-    var test = document.getElementById("test");
+    // function fontMinus() {
+    //     //this.removeAttribute("class")
+    //     test.className = "fontMinus";
+    // }
+    // var test = document.getElementById("test");
 }
 
 // function wypiszTekst(tekst) {
