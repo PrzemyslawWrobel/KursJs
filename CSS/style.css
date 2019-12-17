@@ -16,3 +16,18 @@
     width:  150;
     height: 70;
 }
+
+#test {
+    background-color: red;
+    height: 300px;
+    width: 600px;
+}
+#pogrubiony {
+background-color: yellow;
+height: 300px;
+    width: 600px;
+}
+#przycisk{
+
+    background-color: teal;
+}

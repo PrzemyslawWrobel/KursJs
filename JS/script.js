@@ -15,23 +15,37 @@
 //     age: 24,
 // };
 
-function wykonaj(event, str) {
+function wykonaj(event, eventObj) {
+    //poniżej wsparcie dla eventu w każdej przeglądarce 
     var e = event || window.event;
-    var tmp = document.getElementById("stop");
-    tmp.innerHTML = event.clientX + " " + str;
-    var tooltip = document.getElementById("tooltip");
-    tooltip.style.display = "block";
-    tooltip.style.left = e.clientX + 10 + "px";
-    tooltip.style.top = e.clienty + 10 + "px";
+    //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce 
+    var srcElement = e.target || e.srcElement;
+
+    var tmp = document.getElementById("tmp");
+    tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
+
+
+    // var tooltip = document.getElementById("tooltip");
+    // tooltip.style.display = "block";
+    // tooltip.style.left = e.clientX + 10 + "px";
+    // tooltip.style.top = e.clienty + 10 + "px";
 };
 
 window.onload = function () {
     var test = document.getElementById("test");
-    test.onmousemove = function (event) {
-        wykonaj(event, "przesłany tekst");
+    var pogrubion = document.getElementById("pogrubion");
+    var przycisk = document.getElementById("przycisk");
+    test.onclick = function (event) {
+        alert("test");
+        wykonaj(event, this);
+    };
+    pogrubiony.onclick = function (event) {
+        alert("pogrubiony");
+    };
+    //przycisk.onclick = function(event)
+    przycisk.onclick = function (event) {
+        alert("przycisk");
     }
-
-
 }
 
   // var test = document.getElementById("test");
