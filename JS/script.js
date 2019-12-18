@@ -1,4 +1,35 @@
+window.onload = function () {
+    var ToTopButton = document.getElementById("ToTopButton");
 
+    window.onscroll = function () {
+        var test = document.getElementById("test");
+
+        var ySrollAxis = window.pageYOffset;
+        if (ySrollAxis > 300) {
+            ToTopButton.style.display = "block";
+        } else {
+            ToTopButton.style.display = "none";
+        }
+        test.innerHTML = ySrollAxis;
+    }
+    ToTopButton.onclick = function () {
+        window.scrollBy(0, -1 * window.pageYOffset);
+    }
+
+}
+// window.onload = function () {
+//     var email = document.getElementById("email");
+//     var submitFormButton = document.querySelector("#newsletter input[type='submit']");
+
+//     submitFormButton.onclick = function (e) {
+//         var e = e || window.event;
+//         var tmp = document.getElementById("tmp");
+//         e.preventDefault();
+//         tmp.innerHTML = email.Value;
+
+//         this.parentNode.submit();
+//     };
+// }
 
 // var produkty = [
 //     " PHP",
@@ -15,38 +46,44 @@
 //     age: 24,
 // };
 
-function wykonaj(event, eventObj) {
-    //poniżej wsparcie dla eventu w każdej przeglądarce 
-    var e = event || window.event;
-    //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce 
-    var srcElement = e.target || e.srcElement;
+// function wykonaj(event, eventObj) {
+//     //poniżej wsparcie dla eventu w każdej przeglądarce 
+//     var e = event || window.event;
+//     //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce 
+//     var srcElement = e.target || e.srcElement;
 
-    var tmp = document.getElementById("tmp");
-    tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
+//     var tmp = document.getElementById("tmp");
+//     tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
 
 
-    // var tooltip = document.getElementById("tooltip");
-    // tooltip.style.display = "block";
-    // tooltip.style.left = e.clientX + 10 + "px";
-    // tooltip.style.top = e.clienty + 10 + "px";
-};
+//     // var tooltip = document.getElementById("tooltip");
+//     // tooltip.style.display = "block";
+//     // tooltip.style.left = e.clientX + 10 + "px";
+//     // tooltip.style.top = e.clienty + 10 + "px";
+// };
 
-window.onload = function () {
-    var test = document.getElementById("test");
-    var pogrubion = document.getElementById("pogrubion");
-    var przycisk = document.getElementById("przycisk");
-    test.onclick = function (event) {
-        alert("test");
-        wykonaj(event, this);
-    };
-    pogrubiony.onclick = function (event) {
-        alert("pogrubiony");
-    };
-    //przycisk.onclick = function(event)
-    przycisk.onclick = function (event) {
-        alert("przycisk");
-    }
-}
+// window.onload = function () {
+//     var test = document.getElementById("test");
+//     var pogrubion = document.getElementById("pogrubion");
+//     var przycisk = document.getElementById("przycisk");
+//     test.onclick = function (event) {
+//         alert("test");
+//         wykonaj(event, this);
+//     };
+//     pogrubiony.onclick = function (event) {
+//         alert("pogrubiony");
+//     };
+//     //przycisk.onclick = function(event)
+
+//     przycisk.onclick = function (event) {
+//         var e = event || window.event;
+//         if (e.stopPropagation)
+//             e.stopPropagation();
+//         else
+//             e.cancelBubble = true;
+//         alert("przycisk");
+//     }
+// }
 
   // var test = document.getElementById("test");
     // var stop = document.getElementById("stop");
