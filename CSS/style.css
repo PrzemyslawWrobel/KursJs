@@ -1,3 +1,6 @@
+
+
+
 #ToTopButton {
     background-color: teal;
    width:  150px;
@@ -12,9 +15,6 @@
 #ToTopButton:hover{
     color: red; 
 }
-
-
-
 
 .zmienKolor {
     color: red;
