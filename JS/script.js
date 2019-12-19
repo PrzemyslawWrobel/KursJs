@@ -1,22 +1,50 @@
-window.onload = function () {
-    var ToTopButton = document.getElementById("ToTopButton");
+function stopwatch(uchwytStopera, liczba) {
 
-    window.onscroll = function () {
-        var test = document.getElementById("test");
-
-        var ySrollAxis = window.pageYOffset;
-        if (ySrollAxis > 300) {
-            ToTopButton.style.display = "block";
-        } else {
-            ToTopButton.style.display = "none";
-        }
-        test.innerHTML = ySrollAxis;
-    }
-    ToTopButton.onclick = function () {
-        window.scrollBy(0, -1 * window.pageYOffset);
-    }
-
+    uchwytStopera.innerHTML = liczba--;
+    if (liczba < 0)
+        return;
+    return setTimeout(function () {
+        stopwatch(uchwytStopera, liczba)
+    }, 1000);
 }
+
+window.onload = function () {
+    var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
+    var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
+
+
+    var uchwytStopera = document.getElementById("uchwytStopera");
+
+
+
+    przyciskOdpalStoper.onclick = function () {
+        var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
+        uchwytStopera.innerHTML = poczatkowaWartosc;
+
+        stopwatch(uchwytStopera, poczatkowaWartosc)
+
+    };
+};
+
+// window.onload = function () {
+//     var ToTopButton = document.getElementById("ToTopButton");
+
+//     window.onscroll = function () {
+//         var test = document.getElementById("test");
+
+//         var ySrollAxis = window.pageYOffset;
+//         if (ySrollAxis > 300) {
+//             ToTopButton.style.display = "block";
+//         } else {
+//             ToTopButton.style.display = "none";
+//         }
+//         test.innerHTML = ySrollAxis;
+//     }
+//     ToTopButton.onclick = function () {
+//         window.scrollBy(0, -1 * window.pageYOffset);
+//     }
+
+// }
 // window.onload = function () {
 //     var email = document.getElementById("email");
 //     var submitFormButton = document.querySelector("#newsletter input[type='submit']");
