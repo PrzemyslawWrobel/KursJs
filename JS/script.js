@@ -1,13 +1,26 @@
-function stopwatch(uchwytStopera, liczba) {
+var timeOutStoper;
 
+function stopwatch(uchwytStopera, liczba) {
     uchwytStopera.innerHTML = liczba--;
+
     if (liczba < 0)
         return;
-    return setTimeout(function () {
-        stopwatch(uchwytStopera, liczba)
+    timeOutStoper = setTimeout(function () {
+        stopwatch(uchwytStopera, liczba);
     }, 1000);
 }
+function stopwatchInterval(uchwytStopera, liczba) {
+    var timeIntervalRef = setInterval(function () {
+        if (--liczba < 0) {
+            clearInterval(timeIntervalRef);
+            return;
+        }
 
+        uchwytStopera.innerHTML = liczba; //liczba = 0
+    }, 1000);
+
+    return timeIntervalRef;
+}
 window.onload = function () {
     var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
     var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
@@ -15,17 +28,17 @@ window.onload = function () {
 
     var uchwytStopera = document.getElementById("uchwytStopera");
 
-
+    var timeIntervalRef;
 
     przyciskOdpalStoper.onclick = function () {
         var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
         uchwytStopera.innerHTML = poczatkowaWartosc;
-
-        stopwatch(uchwytStopera, poczatkowaWartosc)
-
+        timeIntervalRef = stopwatchInterval(uchwytStopera, poczatkowaWartosc);
+    };
+    przyciskZatrzymajStoper.onclick = function () {
+        clearInterval(timeIntervalRef);
     };
 };
-
 // window.onload = function () {
 //     var ToTopButton = document.getElementById("ToTopButton");
 
