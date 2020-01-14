@@ -1,44 +1,117 @@
-var timeOutStoper;
-
-function stopwatch(uchwytStopera, liczba) {
-    uchwytStopera.innerHTML = liczba--;
-
-    if (liczba < 0)
-        return;
-    timeOutStoper = setTimeout(function () {
-        stopwatch(uchwytStopera, liczba);
-    }, 1000);
-}
-function stopwatchInterval(uchwytStopera, liczba) {
-    var timeIntervalRef = setInterval(function () {
-        if (--liczba < 0) {
-            clearInterval(timeIntervalRef);
-            return;
-        }
-
-        uchwytStopera.innerHTML = liczba; //liczba = 0
-    }, 1000);
-
-    return timeIntervalRef;
-}
 window.onload = function () {
-    var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
-    var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
+
+    var poleLiczbowe = document.getElementById("myForm").poleLiczbowe;
+    var poleTekstowe = document.getElementById("myForm").poleTekstowe;
+    var submitMyForm = document.getElementById("myForm").submitMyForm;
+
+    var info = document.getElementById("info");
 
 
-    var uchwytStopera = document.getElementById("uchwytStopera");
+    poleLiczbowe.onkeyup = function (e) {
 
-    var timeIntervalRef;
+        info.innerHTML = e.which;
 
-    przyciskOdpalStoper.onclick = function () {
-        var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
-        uchwytStopera.innerHTML = poczatkowaWartosc;
-        timeIntervalRef = stopwatchInterval(uchwytStopera, poczatkowaWartosc);
+        // };
+        //     poleLiczbowe.onkeyup = function (e) {
+
+        //info.innerHTML = e.which;
+        //var wpisanyZnak = e.which;
+
+        // if (isNumber(this.value)) {
+        //     this.style.backgroundColor = "green";
+        //     info.innerHTML = "";
+        //     isEverythingOK = true;
+        // }
+        // else {
+        //     e.preventDefault();
+        //     this.style.backgroundColor = "red";
+        //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
+        //     isEverythingOK = false;
+        // }
     };
-    przyciskZatrzymajStoper.onclick = function () {
-        clearInterval(timeIntervalRef);
-    };
+
+
 };
+
+// function isNumber(valueToCheck) {
+//     return !isNaN(valueToCheck);
+// }
+
+// window.onload = function () {
+//     var poleLiczbowe = document.getElementById("myForm").poleLiczbowe; //.elements[0]
+//     var poleTekstowe = document.getElementById("myForm").poleTekstowe; //.elements[1]
+
+//     var submitMyForm = document.getElementById("myForm").submitMyForm; //.elements[2]
+
+//     var info = document.getElementById("info");
+//     // var i = 0;
+//     // var isEverythingOK = true;
+
+//     poleLiczbowe.onkeyup = function (e) {
+
+//         info.innerHTML = e.which;
+//         //var wpisanyZnak = e.which;
+
+//         // if (isNumber(this.value)) {
+//         //     this.style.backgroundColor = "green";
+//         //     info.innerHTML = "";
+//         //     isEverythingOK = true;
+//         // }
+//         // else {
+//         //     e.preventDefault();
+//         //     this.style.backgroundColor = "red";
+//         //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
+//         //     isEverythingOK = false;
+//         // }
+//     };
+
+//     // submitMyForm.onclick = function (e) {
+//     //     if (!isEverythingOK)
+//     //         e.preventDefault();
+//     // };
+// };
+
+// var timeOutStoper;
+
+// function stopwatch(uchwytStopera, liczba) {
+//     uchwytStopera.innerHTML = liczba--;
+
+//     if (liczba < 0)
+//         return;
+//     timeOutStoper = setTimeout(function () {
+//         stopwatch(uchwytStopera, liczba);
+//     }, 1000);
+// }
+// function stopwatchInterval(uchwytStopera, liczba) {
+//     var timeIntervalRef = setInterval(function () {
+//         if (--liczba < 0) {
+//             clearInterval(timeIntervalRef);
+//             return;
+//         }
+
+//         uchwytStopera.innerHTML = liczba; //liczba = 0
+//     }, 1000);
+
+//     return timeIntervalRef;
+// }
+// window.onload = function () {
+//     var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
+//     var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
+
+
+//     var uchwytStopera = document.getElementById("uchwytStopera");
+
+//     var timeIntervalRef;
+
+//     przyciskOdpalStoper.onclick = function () {
+//         var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
+//         uchwytStopera.innerHTML = poczatkowaWartosc;
+//         timeIntervalRef = stopwatchInterval(uchwytStopera, poczatkowaWartosc);
+//     };
+//     przyciskZatrzymajStoper.onclick = function () {
+//         clearInterval(timeIntervalRef);
+//     };
+// };
 // window.onload = function () {
 //     var ToTopButton = document.getElementById("ToTopButton");
 
@@ -88,9 +161,9 @@ window.onload = function () {
 // };
 
 // function wykonaj(event, eventObj) {
-//     //poniżej wsparcie dla eventu w każdej przeglądarce 
+//     //poniżej wsparcie dla eventu w każdej przeglądarce
 //     var e = event || window.event;
-//     //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce 
+//     //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce
 //     var srcElement = e.target || e.srcElement;
 
 //     var tmp = document.getElementById("tmp");
