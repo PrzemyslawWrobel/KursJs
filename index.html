@@ -12,12 +12,23 @@
 <body>
 
     <form id="myForm">
-        <label><input type="checkbox" name="nazwaKursu" value="PHP">PHP></label>
-        <label><input type="checkbox" name="nazwaKursu" value="XhtmlICss">Xhtml I Css></label>
-        <label><input type="checkbox" name="nazwaKursu" value="PDO">PDO></label>
-        <label><input type="checkbox" name="nazwaKursu" value="MySQL">PDO></label>
+        <div>
+            <label><input type="checkbox" name="nazwaKursu" value="PHP">PHP</label>
+            <label><input type="checkbox" name="nazwaKursu" value="XhtmlICss">Xhtml I Css</label>
+            <label><input type="checkbox" name="nazwaKursu" value="PDO">PDO</label>
+            <label><input type="checkbox" name="nazwaKursu" value="MySQL">PDO</label>
+        </div>
 
-        <input type="submit" name="submitButton" value="Dodaj">
+        <div>
+            <p>
+                Akceptujesz regulamin?
+            </p>
+        </div>
+        <div>
+            <label><input type="radio" name="akceptacjaRegulaminu" value="false">Tak</label>
+            <label><input type="radio" name="akceptacjaRegulaminu" value="true" checked>Nie</label>
+        </div>
+        <input type="submit" name="submitButton" value="Dodaj" disabled>
     </form>
     <div id="info"></div>
 

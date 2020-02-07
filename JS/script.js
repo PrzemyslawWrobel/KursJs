@@ -1,37 +1,61 @@
-window.onload = function () {
+window.onload = function() {
+  var myForm = document.getElementById("myForm");
+  var submitButton = document.getElementById("myForm").submitButton;
 
-    var poleLiczbowe = document.getElementById("myForm").poleLiczbowe;
-    var poleTekstowe = document.getElementById("myForm").poleTekstowe;
-    var submitMyForm = document.getElementById("myForm").submitMyForm;
+  var info = document.getElementById("info");
 
-    var info = document.getElementById("info");
+  submitButton.onclick = function(e) {
+    var tmpString = "";
+    for (var i = 0; i < myForm.nazwaKursu.length; i++) {
+      if (myForm.nazwaKursu[i].checked)
+        tmpString += myForm.nazwaKursu[i].value + " ";
+    }
 
+    info.innerHTML += tmpString + "<br>";
 
-    poleLiczbowe.onkeyup = function (e) {
-
-        info.innerHTML = e.which;
-
-        // };
-        //     poleLiczbowe.onkeyup = function (e) {
-
-        //info.innerHTML = e.which;
-        //var wpisanyZnak = e.which;
-
-        // if (isNumber(this.value)) {
-        //     this.style.backgroundColor = "green";
-        //     info.innerHTML = "";
-        //     isEverythingOK = true;
-        // }
-        // else {
-        //     e.preventDefault();
-        //     this.style.backgroundColor = "red";
-        //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
-        //     isEverythingOK = false;
-        // }
+    e.preventDefault();
+  };
+  // myForm.akceptacjaRegulaminu[0].onclick = function() {
+  //   submitButton.disabled = false;
+  // };
+  // myForm.akceptacjaRegulaminu[1].onclick = function() {
+  //   submitButton.disabled = true;
+  // };
+  for (var i = 0; i < myForm.akceptacjaRegulaminu.length; i++) {
+    myForm.akceptacjaRegulaminu[i].onclick = function() {
+      submitButton.disabled = this.value === "true";
     };
-
-
+  }
 };
+// window.onload = function() {
+//   var poleLiczbowe = document.getElementById("myForm").poleLiczbowe;
+//   var poleTekstowe = document.getElementById("myForm").poleTekstowe;
+//   var submitMyForm = document.getElementById("myForm").submitMyForm;
+
+//   var info = document.getElementById("info");
+
+//   poleLiczbowe.onkeyup = function(e) {
+//     info.innerHTML = e.which;
+
+//     // };
+//     //     poleLiczbowe.onkeyup = function (e) {
+
+//     //info.innerHTML = e.which;
+//     //var wpisanyZnak = e.which;
+
+//     // if (isNumber(this.value)) {
+//     //     this.style.backgroundColor = "green";
+//     //     info.innerHTML = "";
+//     //     isEverythingOK = true;
+//     // }
+//     // else {
+//     //     e.preventDefault();
+//     //     this.style.backgroundColor = "red";
+//     //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
+//     //     isEverythingOK = false;
+//     // }
+//   };
+// };
 
 // function isNumber(valueToCheck) {
 //     return !isNaN(valueToCheck);
@@ -97,7 +121,6 @@ window.onload = function () {
 // window.onload = function () {
 //     var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
 //     var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
-
 
 //     var uchwytStopera = document.getElementById("uchwytStopera");
 
@@ -169,7 +192,6 @@ window.onload = function () {
 //     var tmp = document.getElementById("tmp");
 //     tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
 
-
 //     // var tooltip = document.getElementById("tooltip");
 //     // tooltip.style.display = "block";
 //     // tooltip.style.left = e.clientX + 10 + "px";
@@ -199,41 +221,39 @@ window.onload = function () {
 //     }
 // }
 
-  // var test = document.getElementById("test");
-    // var stop = document.getElementById("stop");
+// var test = document.getElementById("test");
+// var stop = document.getElementById("stop");
 
-    // function zmienKolor() {
-    //     test.className = "zmienKolor";
-    // }
-    // function zmienKolor2() {
-    //     this.removeAttribute("class")
-    //     //test.className = "fontMinus";
-    // }
-    // function powiekszCzcionke() {
-    //     var fontSize = parseInt(window.getComputedStyle(this).fontSize);
-    //     this.style.fontSize = (++fontSize) + "px";
-    // }
-    // // test.onmouseover = zmienKolor;
-    // // test.onmouseout = zmienKolor2;
-    // test.addEventListener("mouseover", zmienKolor);
-    // test.addEventListener("mouseover", powiekszCzcionke);
-    // test.addEventListener("mouseout", zmienKolor2);
+// function zmienKolor() {
+//     test.className = "zmienKolor";
+// }
+// function zmienKolor2() {
+//     this.removeAttribute("class")
+//     //test.className = "fontMinus";
+// }
+// function powiekszCzcionke() {
+//     var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+//     this.style.fontSize = (++fontSize) + "px";
+// }
+// // test.onmouseover = zmienKolor;
+// // test.onmouseout = zmienKolor2;
+// test.addEventListener("mouseover", zmienKolor);
+// test.addEventListener("mouseover", powiekszCzcionke);
+// test.addEventListener("mouseout", zmienKolor2);
 
-    // stop.addEventListener("click", function () {
-    //     test.removeEventListener("mouseover", powiekszCzcionke);
-    //});
-
+// stop.addEventListener("click", function () {
+//     test.removeEventListener("mouseover", powiekszCzcionke);
+//});
 
 // function fontPlus() {
-    //     test.className = "fontPlus";
-    // }
+//     test.className = "fontPlus";
+// }
 
-    // function fontMinus() {
-    //     //this.removeAttribute("class")
-    //     test.className = "fontMinus";
-    // }
-    // var test = document.getElementById("test");
-
+// function fontMinus() {
+//     //this.removeAttribute("class")
+//     test.className = "fontMinus";
+// }
+// var test = document.getElementById("test");
 
 // function wypiszTekst(tekst) {
 //     alert(tekst + "!!!!!!!!!!!!!!!!!!");
@@ -262,7 +282,6 @@ window.onload = function () {
 // var rezultat = document.getElementById("rezultat");
 
 // rezultat.innerHTML = tabliczkaMnożenia;
-
 
 // var x = document.createElement("p");
 // x.style.color = "red";
@@ -381,13 +400,11 @@ do{
 
 // element.innerHTML = produkty;
 
-
 //produkty.push("PDO");
 
 //var produkty = new Array();
 
 //alert(produkty);
-
 
 //  tablice asocjacyjne to rodzaj tablic gdzie zamiast indeksu jest string
 //ASSOCIATIVE ARRAYS
