@@ -1,6 +1,18 @@
 window.onload = function() {
   var info = document.getElementById("info");
-  info.innerHTML = "LoremIpsum3";
+  // info.innerHTML = "lorem aidf ad sfasdf adssd";
+
+  var tmp = " aRkaDius ";
+  tmp =
+    tmp
+      .trim()
+      .charAt(0)
+      .toUpperCase() +
+    tmp.slice(1, tmp.length - 1).toLowerCase() +
+    tmp.charAt(tmp.length - 2).toUpperCase();
+  info.innerHTML = tmp;
+  // let link = "https://szczecinski.eu/docs/react/podstawowe-pojecia/basic";
+  // info.innerHTML = link.slice(link.lastIndexOf("/") + 1);
 };
 // window.onload = function() {
 //   var myForm = document.getElementById("myForm");
