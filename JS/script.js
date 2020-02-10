@@ -1,7 +1,11 @@
 window.onload = function() {
   var info = document.getElementById("info");
   let indeksy = " A-56 B-12 K-51 A-53";
-  let result = indeksy.match(/[0-9]{1,}/g);
+  let imie = "Daąśrek";
+  let result = imie.match(/^[A-Z][^0-9]*/g);
+
+  // let result = indeksy.match(/[0-9]{1,}/g);
+
   info.innerHTML = result;
 };
 //   var tmp = " aRkaDius ";
