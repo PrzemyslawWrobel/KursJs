@@ -11,9 +11,14 @@ window.onload = function() {
   // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
   // info.innerHTML = result;
 
-  let pw = "asAe7fhjd";
-  let redExpPattern = /(?=.*[0-9])(?=.*[A-Z]).{7,}/;
-  info.innerHTML = redExpPattern.test(pw);
+  var testButton = document.getElementById("myForm").testButton;
+
+  testButton.onclick = function() {
+    var pw = document.getElementById("myForm").pw.value;
+    let redExpPattern = /(?=.*[0-9])(?=.*[A-Z]).{7,}/;
+    info.innerHTML = redExpPattern.test(pw);
+  };
+  //let pw = "asAe7fhjd";
 };
 //   var tmp = " aRkaDius ";
 //   tmp =
