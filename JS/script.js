@@ -1,15 +1,19 @@
 window.onload = function() {
   var info = document.getElementById("info");
-  let indeksy = " A-56 B-12 K-51 A-53";
-  let imie = "Daąśrek";
-  let d = "ALAArkadiusz";
-  let result = d.replace(/(A)(l)(a)/gi);
-  //let result = imie.match(/^[A-Z][^0-9]*/g);
+  // let indeksy = " A-56 B-12 K-51 A-53";
+  // let imie = "Daąśrek";
+  // let d = "ALAArkadiusz";
+  // let result = d.replace(/(A)(l)(a)/gi);
+  // //let result = imie.match(/^[A-Z][^0-9]*/g);
 
-  // let result = indeksy.match(/[0-9]{1,}/g);
-  let kodPocztowy = "43-300";
-  result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
-  info.innerHTML = result;
+  // // let result = indeksy.match(/[0-9]{1,}/g);
+  // let kodPocztowy = "43-300";
+  // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
+  // info.innerHTML = result;
+
+  let pw = "asAe7fhjd";
+  let redExpPattern = /(?=.*[0-9])(?=.*[A-Z]).{7,}/;
+  info.innerHTML = redExpPattern.test(pw);
 };
 //   var tmp = " aRkaDius ";
 //   tmp =
