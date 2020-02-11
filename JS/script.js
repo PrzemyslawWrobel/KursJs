@@ -1,50 +1,54 @@
 window.onload = function() {
-  var info = document.getElementById("info");
-  // let indeksy = " A-56 B-12 K-51 A-53";
-  // let imie = "Daąśrek";
-  // let d = "ALAArkadiusz";
-  // let result = d.replace(/(A)(l)(a)/gi);
-  // //let result = imie.match(/^[A-Z][^0-9]*/g);
+  let info = document.getElementById("info");
+  let ToDay = new Date();
 
-  // // let result = indeksy.match(/[0-9]{1,}/g);
-  // let kodPocztowy = "43-300";
-  // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
-  // info.innerHTML = result;
-
-  var testButton = document.getElementById("myForm").testButton;
-
-  testButton.onclick = function(e) {
-    // e.preventDefault();
-    // var pw = document.getElementById("myForm").pw.value;
-    // let redExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
-
-    // if (redExpPattern.test(pw)) {
-    //   document.getElementById("myForm").submit();
-    //   info.innerHTML = "Hasło silne";
-    // } else {
-    //   info.innerHTML = "Hasło słabe";
-    // }
-    var info = document.getElementById("info");
-
-    var testButton = document.getElementById("myForm").testButton;
-
-    // var pw = "aBc4fgąi";
-
-    testButton.onclick = function(e) {
-      e.preventDefault();
-      var pw = document.getElementById("myForm").pw.value;
-      var regExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
-
-      if (regExpPattern.test(pw)) {
-        document.getElementById("myForm").submit();
-        info.innerHTML = "Hasło jest silne";
-      } else {
-        info.innerHTML = "Hasło jest za słabe";
-      }
-    };
-  };
-  //let pw = "asAe7fhjd";
+  info.innerHTML = ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
 };
+//   // let indeksy = " A-56 B-12 K-51 A-53";
+//   // let imie = "Daąśrek";
+//   // let d = "ALAArkadiusz";
+//   // let result = d.replace(/(A)(l)(a)/gi);
+//   // //let result = imie.match(/^[A-Z][^0-9]*/g);
+
+//   // // let result = indeksy.match(/[0-9]{1,}/g);
+//   // let kodPocztowy = "43-300";
+//   // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
+//   // info.innerHTML = result;
+
+//   var testButton = document.getElementById("myForm").testButton;
+
+//   testButton.onclick = function(e) {
+//     // e.preventDefault();
+//     // var pw = document.getElementById("myForm").pw.value;
+//     // let redExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+
+//     // if (redExpPattern.test(pw)) {
+//     //   document.getElementById("myForm").submit();
+//     //   info.innerHTML = "Hasło silne";
+//     // } else {
+//     //   info.innerHTML = "Hasło słabe";
+//     // }
+//     var info = document.getElementById("info");
+
+//     var testButton = document.getElementById("myForm").testButton;
+
+//     // var pw = "aBc4fgąi";
+
+//     testButton.onclick = function(e) {
+//       e.preventDefault();
+//       var pw = document.getElementById("myForm").pw.value;
+//       var regExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+
+//       if (regExpPattern.test(pw)) {
+//         document.getElementById("myForm").submit();
+//         info.innerHTML = "Hasło jest silne";
+//       } else {
+//         info.innerHTML = "Hasło jest za słabe";
+//       }
+//     };
+//   };
+//   //let pw = "asAe7fhjd";
+// };
 //   var tmp = " aRkaDius ";
 //   tmp =
 //     tmp
