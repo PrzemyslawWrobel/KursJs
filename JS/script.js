@@ -13,10 +13,35 @@ window.onload = function() {
 
   var testButton = document.getElementById("myForm").testButton;
 
-  testButton.onclick = function() {
-    var pw = document.getElementById("myForm").pw.value;
-    let redExpPattern = /(?=.*[0-9])(?=.*[A-Z]).{7,}/;
-    info.innerHTML = redExpPattern.test(pw);
+  testButton.onclick = function(e) {
+    // e.preventDefault();
+    // var pw = document.getElementById("myForm").pw.value;
+    // let redExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+
+    // if (redExpPattern.test(pw)) {
+    //   document.getElementById("myForm").submit();
+    //   info.innerHTML = "Hasło silne";
+    // } else {
+    //   info.innerHTML = "Hasło słabe";
+    // }
+    var info = document.getElementById("info");
+
+    var testButton = document.getElementById("myForm").testButton;
+
+    // var pw = "aBc4fgąi";
+
+    testButton.onclick = function(e) {
+      e.preventDefault();
+      var pw = document.getElementById("myForm").pw.value;
+      var regExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+
+      if (regExpPattern.test(pw)) {
+        document.getElementById("myForm").submit();
+        info.innerHTML = "Hasło jest silne";
+      } else {
+        info.innerHTML = "Hasło jest za słabe";
+      }
+    };
   };
   //let pw = "asAe7fhjd";
 };
