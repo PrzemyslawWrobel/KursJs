@@ -15,7 +15,25 @@ function Clock(elementHandler) {
     this.actualDate = new Date();
   };
   this.updateElementHandlerContent = function() {
-    this.elementHandler.innerHTML = this.actualDate.toLocaleTimeString();
+    this.elementHandler.innerHTML = this.getFormattedDate(); //this.actualDate.toLocaleTimeString();
+  };
+  this.getFormattedDate = function() {
+    let hours = this.actualDate.getHours();
+    let minutes = this.actualDate.getMinutes();
+    let seconds = this.actualDate.getSeconds();
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+
+    let suffix = "";
+    if (hours < 12) {
+      suffix = "AM";
+    } else {
+      hours -= 12;
+      suffix = "PM";
+    }
+
+    return hours + ":" + minutes + ":" + seconds + " " + suffix;
   };
 }
 
