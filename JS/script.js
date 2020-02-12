@@ -1,578 +1,586 @@
-function Clock(elementHandler) {
-  this.elementHandler = elementHandler;
-  this.actualDate = new Date();
-
-  this.start = function() {
-    this.updateElementHandlerContent();
-    var self = this;
-    setInterval(function() {
-      self.addSeccond();
-      self.updateElementHandlerContent();
-    }, 1000);
-  };
-
-  this.addSeccond = function() {
-    this.actualDate = new Date();
-  };
-  this.updateElementHandlerContent = function() {
-    this.elementHandler.innerHTML = this.getFormattedDate(); //this.actualDate.toLocaleTimeString();
-  };
-  this.getFormattedDate = function() {
-    let hours = this.actualDate.getHours();
-    let minutes = this.actualDate.getMinutes();
-    let seconds = this.actualDate.getSeconds();
-    if (hours < 10) hours = "0" + hours;
-    if (minutes < 10) minutes = "0" + minutes;
-    if (seconds < 10) seconds = "0" + seconds;
-
-    let suffix = "";
-    if (hours < 12) {
-      suffix = "AM";
-    } else {
-      hours -= 12;
-      suffix = "PM";
-    }
-
-    return hours + ":" + minutes + ":" + seconds + " " + suffix;
-  };
-}
-
 window.onload = function() {
   var info = document.getElementById("info");
-  var clock = new Clock(info);
-  clock.start();
-
+  let x = 20.019;
+  info.innerHTML = x.toFixed(2);
   //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
   // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
 };
 
-// function getMonthFromNumber(monthNumber) {
-//   let months = [
-//     "Styczeń",
-//     "Luty",
-//     "Marzec",
-//     "Kwiecień",
-//     "Maj",
-//     "Czerwiec",
-//     "Lipiec",
-//     "Sierpień",
-//     "Wrzesień",
-//     "Październik",
-//     "Listopad",
-//     "Grudzień"
-//   ];
-//   return months[monthNumber];
+// function Clock(elementHandler) {
+//   this.elementHandler = elementHandler;
+//   this.actualDate = new Date();
+
+//   this.start = function() {
+//     this.updateElementHandlerContent();
+//     var self = this;
+//     setInterval(function() {
+//       self.addSeccond();
+//       self.updateElementHandlerContent();
+//     }, 1000);
+//   };
+
+//   this.addSeccond = function() {
+//     this.actualDate = new Date();
+//   };
+//   this.updateElementHandlerContent = function() {
+//     this.elementHandler.innerHTML = this.getFormattedDate(); //this.actualDate.toLocaleTimeString();
+//   };
+//   this.getFormattedDate = function() {
+//     let hours = this.actualDate.getHours();
+//     let minutes = this.actualDate.getMinutes();
+//     let seconds = this.actualDate.getSeconds();
+//     if (hours < 10) hours = "0" + hours;
+//     if (minutes < 10) minutes = "0" + minutes;
+//     if (seconds < 10) seconds = "0" + seconds;
+
+//     let suffix = "";
+//     if (hours < 12) {
+//       suffix = "AM";
+//     } else {
+//       hours -= 12;
+//       suffix = "PM";
+//     }
+
+//     return hours + ":" + minutes + ":" + seconds + " " + suffix;
+//   };
 // }
-// function getDaysOfWeekNumber(dayNumber) {
-//   let daysWeek = [
-//     "Niedziela",
-//     "Poniedziałek",
-//     "Wtorek",
-//     "Środa",
-//     "Czwartek",
-//     "Piątek",
-//     "Sobota"
-//   ];
-//   return daysWeek[dayNumber];
-// }
+
 // window.onload = function() {
-//   let info = document.getElementById("info");
-//   let ToDay = new Date();
-//   let dniTygodniaPL = getDaysOfWeekNumber(ToDay.getDay());
-//   info.innerHTML = dniTygodniaPL; //ToDay.toLocaleDateString();
+//   var info = document.getElementById("info");
+//   var clock = new Clock(info);
+//   clock.start();
 
 //   //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
 //   // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
 // };
-//   // let indeksy = " A-56 B-12 K-51 A-53";
-//   // let imie = "Daąśrek";
-//   // let d = "ALAArkadiusz";
-//   // let result = d.replace(/(A)(l)(a)/gi);
-//   // //let result = imie.match(/^[A-Z][^0-9]*/g);
 
-//   // // let result = indeksy.match(/[0-9]{1,}/g);
-//   // let kodPocztowy = "43-300";
-//   // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
-//   // info.innerHTML = result;
+// // function getMonthFromNumber(monthNumber) {
+// //   let months = [
+// //     "Styczeń",
+// //     "Luty",
+// //     "Marzec",
+// //     "Kwiecień",
+// //     "Maj",
+// //     "Czerwiec",
+// //     "Lipiec",
+// //     "Sierpień",
+// //     "Wrzesień",
+// //     "Październik",
+// //     "Listopad",
+// //     "Grudzień"
+// //   ];
+// //   return months[monthNumber];
+// // }
+// // function getDaysOfWeekNumber(dayNumber) {
+// //   let daysWeek = [
+// //     "Niedziela",
+// //     "Poniedziałek",
+// //     "Wtorek",
+// //     "Środa",
+// //     "Czwartek",
+// //     "Piątek",
+// //     "Sobota"
+// //   ];
+// //   return daysWeek[dayNumber];
+// // }
+// // window.onload = function() {
+// //   let info = document.getElementById("info");
+// //   let ToDay = new Date();
+// //   let dniTygodniaPL = getDaysOfWeekNumber(ToDay.getDay());
+// //   info.innerHTML = dniTygodniaPL; //ToDay.toLocaleDateString();
 
-//   var testButton = document.getElementById("myForm").testButton;
+// //   //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
+// //   // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
+// // };
+// //   // let indeksy = " A-56 B-12 K-51 A-53";
+// //   // let imie = "Daąśrek";
+// //   // let d = "ALAArkadiusz";
+// //   // let result = d.replace(/(A)(l)(a)/gi);
+// //   // //let result = imie.match(/^[A-Z][^0-9]*/g);
 
-//   testButton.onclick = function(e) {
-//     // e.preventDefault();
-//     // var pw = document.getElementById("myForm").pw.value;
-//     // let redExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+// //   // // let result = indeksy.match(/[0-9]{1,}/g);
+// //   // let kodPocztowy = "43-300";
+// //   // result = /[0-9]{2}-?[0-9]{3}/.test(kodPocztowy);
+// //   // info.innerHTML = result;
 
-//     // if (redExpPattern.test(pw)) {
-//     //   document.getElementById("myForm").submit();
-//     //   info.innerHTML = "Hasło silne";
-//     // } else {
-//     //   info.innerHTML = "Hasło słabe";
-//     // }
-//     var info = document.getElementById("info");
+// //   var testButton = document.getElementById("myForm").testButton;
 
-//     var testButton = document.getElementById("myForm").testButton;
+// //   testButton.onclick = function(e) {
+// //     // e.preventDefault();
+// //     // var pw = document.getElementById("myForm").pw.value;
+// //     // let redExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
 
-//     // var pw = "aBc4fgąi";
+// //     // if (redExpPattern.test(pw)) {
+// //     //   document.getElementById("myForm").submit();
+// //     //   info.innerHTML = "Hasło silne";
+// //     // } else {
+// //     //   info.innerHTML = "Hasło słabe";
+// //     // }
+// //     var info = document.getElementById("info");
 
-//     testButton.onclick = function(e) {
-//       e.preventDefault();
-//       var pw = document.getElementById("myForm").pw.value;
-//       var regExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
+// //     var testButton = document.getElementById("myForm").testButton;
 
-//       if (regExpPattern.test(pw)) {
-//         document.getElementById("myForm").submit();
-//         info.innerHTML = "Hasło jest silne";
-//       } else {
-//         info.innerHTML = "Hasło jest za słabe";
-//       }
-//     };
-//   };
-//   //let pw = "asAe7fhjd";
-// };
-//   var tmp = " aRkaDius ";
-//   tmp =
-//     tmp
-//       .trim()
-//       .charAt(0)
-//       .toUpperCase() +
-//     tmp.slice(1, tmp.length - 1).toLowerCase() +
-//     tmp.charAt(tmp.length - 2).toUpperCase();
-//   info.innerHTML = tmp;
-//   // let link = "https://szczecinski.eu/docs/react/podstawowe-pojecia/basic";
-//   // info.innerHTML = link.slice(link.lastIndexOf("/") + 1);
-// };
-// window.onload = function() {
-//   var myForm = document.getElementById("myForm");
-//   var submitButton = document.getElementById("myForm").submitButton;
+// //     // var pw = "aBc4fgąi";
 
-//   var info = document.getElementById("info");
+// //     testButton.onclick = function(e) {
+// //       e.preventDefault();
+// //       var pw = document.getElementById("myForm").pw.value;
+// //       var regExpPattern = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,}/;
 
-//   submitButton.onclick = function(e) {
-//     var tmpString = "";
-//     for (var i = 0; i < myForm.nazwaKursu.length; i++) {
-//       if (myForm.nazwaKursu[i].checked)
-//         tmpString += myForm.nazwaKursu[i].value + " ";
-//     }
+// //       if (regExpPattern.test(pw)) {
+// //         document.getElementById("myForm").submit();
+// //         info.innerHTML = "Hasło jest silne";
+// //       } else {
+// //         info.innerHTML = "Hasło jest za słabe";
+// //       }
+// //     };
+// //   };
+// //   //let pw = "asAe7fhjd";
+// // };
+// //   var tmp = " aRkaDius ";
+// //   tmp =
+// //     tmp
+// //       .trim()
+// //       .charAt(0)
+// //       .toUpperCase() +
+// //     tmp.slice(1, tmp.length - 1).toLowerCase() +
+// //     tmp.charAt(tmp.length - 2).toUpperCase();
+// //   info.innerHTML = tmp;
+// //   // let link = "https://szczecinski.eu/docs/react/podstawowe-pojecia/basic";
+// //   // info.innerHTML = link.slice(link.lastIndexOf("/") + 1);
+// // };
+// // window.onload = function() {
+// //   var myForm = document.getElementById("myForm");
+// //   var submitButton = document.getElementById("myForm").submitButton;
 
-//     info.innerHTML += tmpString + "<br>";
+// //   var info = document.getElementById("info");
 
-//     e.preventDefault();
-//   };
-//   // myForm.akceptacjaRegulaminu[0].onclick = function() {
-//   //   submitButton.disabled = false;
-//   // };
-//   // myForm.akceptacjaRegulaminu[1].onclick = function() {
-//   //   submitButton.disabled = true;
-//   // };
-//   for (var i = 0; i < myForm.akceptacjaRegulaminu.length; i++) {
-//     myForm.akceptacjaRegulaminu[i].onclick = function() {
-//       submitButton.disabled = this.value === "true";
-//     };
-//   }
-// };
-// window.onload = function() {
-//   var poleLiczbowe = document.getElementById("myForm").poleLiczbowe;
-//   var poleTekstowe = document.getElementById("myForm").poleTekstowe;
-//   var submitMyForm = document.getElementById("myForm").submitMyForm;
+// //   submitButton.onclick = function(e) {
+// //     var tmpString = "";
+// //     for (var i = 0; i < myForm.nazwaKursu.length; i++) {
+// //       if (myForm.nazwaKursu[i].checked)
+// //         tmpString += myForm.nazwaKursu[i].value + " ";
+// //     }
 
-//   var info = document.getElementById("info");
+// //     info.innerHTML += tmpString + "<br>";
 
-//   poleLiczbowe.onkeyup = function(e) {
-//     info.innerHTML = e.which;
+// //     e.preventDefault();
+// //   };
+// //   // myForm.akceptacjaRegulaminu[0].onclick = function() {
+// //   //   submitButton.disabled = false;
+// //   // };
+// //   // myForm.akceptacjaRegulaminu[1].onclick = function() {
+// //   //   submitButton.disabled = true;
+// //   // };
+// //   for (var i = 0; i < myForm.akceptacjaRegulaminu.length; i++) {
+// //     myForm.akceptacjaRegulaminu[i].onclick = function() {
+// //       submitButton.disabled = this.value === "true";
+// //     };
+// //   }
+// // };
+// // window.onload = function() {
+// //   var poleLiczbowe = document.getElementById("myForm").poleLiczbowe;
+// //   var poleTekstowe = document.getElementById("myForm").poleTekstowe;
+// //   var submitMyForm = document.getElementById("myForm").submitMyForm;
 
-//     // };
-//     //     poleLiczbowe.onkeyup = function (e) {
+// //   var info = document.getElementById("info");
 
-//     //info.innerHTML = e.which;
-//     //var wpisanyZnak = e.which;
+// //   poleLiczbowe.onkeyup = function(e) {
+// //     info.innerHTML = e.which;
 
-//     // if (isNumber(this.value)) {
-//     //     this.style.backgroundColor = "green";
-//     //     info.innerHTML = "";
-//     //     isEverythingOK = true;
-//     // }
-//     // else {
-//     //     e.preventDefault();
-//     //     this.style.backgroundColor = "red";
-//     //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
-//     //     isEverythingOK = false;
-//     // }
-//   };
-// };
+// //     // };
+// //     //     poleLiczbowe.onkeyup = function (e) {
 
-// function isNumber(valueToCheck) {
-//     return !isNaN(valueToCheck);
-// }
+// //     //info.innerHTML = e.which;
+// //     //var wpisanyZnak = e.which;
 
-// window.onload = function () {
-//     var poleLiczbowe = document.getElementById("myForm").poleLiczbowe; //.elements[0]
-//     var poleTekstowe = document.getElementById("myForm").poleTekstowe; //.elements[1]
+// //     // if (isNumber(this.value)) {
+// //     //     this.style.backgroundColor = "green";
+// //     //     info.innerHTML = "";
+// //     //     isEverythingOK = true;
+// //     // }
+// //     // else {
+// //     //     e.preventDefault();
+// //     //     this.style.backgroundColor = "red";
+// //     //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
+// //     //     isEverythingOK = false;
+// //     // }
+// //   };
+// // };
 
-//     var submitMyForm = document.getElementById("myForm").submitMyForm; //.elements[2]
+// // function isNumber(valueToCheck) {
+// //     return !isNaN(valueToCheck);
+// // }
 
-//     var info = document.getElementById("info");
-//     // var i = 0;
-//     // var isEverythingOK = true;
+// // window.onload = function () {
+// //     var poleLiczbowe = document.getElementById("myForm").poleLiczbowe; //.elements[0]
+// //     var poleTekstowe = document.getElementById("myForm").poleTekstowe; //.elements[1]
 
-//     poleLiczbowe.onkeyup = function (e) {
+// //     var submitMyForm = document.getElementById("myForm").submitMyForm; //.elements[2]
 
-//         info.innerHTML = e.which;
-//         //var wpisanyZnak = e.which;
+// //     var info = document.getElementById("info");
+// //     // var i = 0;
+// //     // var isEverythingOK = true;
 
-//         // if (isNumber(this.value)) {
-//         //     this.style.backgroundColor = "green";
-//         //     info.innerHTML = "";
-//         //     isEverythingOK = true;
-//         // }
-//         // else {
-//         //     e.preventDefault();
-//         //     this.style.backgroundColor = "red";
-//         //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
-//         //     isEverythingOK = false;
-//         // }
-//     };
+// //     poleLiczbowe.onkeyup = function (e) {
 
-//     // submitMyForm.onclick = function (e) {
-//     //     if (!isEverythingOK)
-//     //         e.preventDefault();
-//     // };
-// };
+// //         info.innerHTML = e.which;
+// //         //var wpisanyZnak = e.which;
 
-// var timeOutStoper;
+// //         // if (isNumber(this.value)) {
+// //         //     this.style.backgroundColor = "green";
+// //         //     info.innerHTML = "";
+// //         //     isEverythingOK = true;
+// //         // }
+// //         // else {
+// //         //     e.preventDefault();
+// //         //     this.style.backgroundColor = "red";
+// //         //     info.innerHTML = "Niepoprawny format - pole przyjmuje tylko liczby";
+// //         //     isEverythingOK = false;
+// //         // }
+// //     };
 
-// function stopwatch(uchwytStopera, liczba) {
-//     uchwytStopera.innerHTML = liczba--;
+// //     // submitMyForm.onclick = function (e) {
+// //     //     if (!isEverythingOK)
+// //     //         e.preventDefault();
+// //     // };
+// // };
 
-//     if (liczba < 0)
-//         return;
-//     timeOutStoper = setTimeout(function () {
-//         stopwatch(uchwytStopera, liczba);
-//     }, 1000);
-// }
-// function stopwatchInterval(uchwytStopera, liczba) {
-//     var timeIntervalRef = setInterval(function () {
-//         if (--liczba < 0) {
-//             clearInterval(timeIntervalRef);
-//             return;
-//         }
+// // var timeOutStoper;
 
-//         uchwytStopera.innerHTML = liczba; //liczba = 0
-//     }, 1000);
+// // function stopwatch(uchwytStopera, liczba) {
+// //     uchwytStopera.innerHTML = liczba--;
 
-//     return timeIntervalRef;
-// }
-// window.onload = function () {
-//     var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
-//     var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
+// //     if (liczba < 0)
+// //         return;
+// //     timeOutStoper = setTimeout(function () {
+// //         stopwatch(uchwytStopera, liczba);
+// //     }, 1000);
+// // }
+// // function stopwatchInterval(uchwytStopera, liczba) {
+// //     var timeIntervalRef = setInterval(function () {
+// //         if (--liczba < 0) {
+// //             clearInterval(timeIntervalRef);
+// //             return;
+// //         }
 
-//     var uchwytStopera = document.getElementById("uchwytStopera");
+// //         uchwytStopera.innerHTML = liczba; //liczba = 0
+// //     }, 1000);
 
-//     var timeIntervalRef;
+// //     return timeIntervalRef;
+// // }
+// // window.onload = function () {
+// //     var przyciskOdpalStoper = document.getElementById("przyciskOdpalStoper");
+// //     var przyciskZatrzymajStoper = document.getElementById("przyciskZatrzymajStoper");
 
-//     przyciskOdpalStoper.onclick = function () {
-//         var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
-//         uchwytStopera.innerHTML = poczatkowaWartosc;
-//         timeIntervalRef = stopwatchInterval(uchwytStopera, poczatkowaWartosc);
-//     };
-//     przyciskZatrzymajStoper.onclick = function () {
-//         clearInterval(timeIntervalRef);
-//     };
-// };
-// window.onload = function () {
-//     var ToTopButton = document.getElementById("ToTopButton");
+// //     var uchwytStopera = document.getElementById("uchwytStopera");
 
-//     window.onscroll = function () {
-//         var test = document.getElementById("test");
+// //     var timeIntervalRef;
 
-//         var ySrollAxis = window.pageYOffset;
-//         if (ySrollAxis > 300) {
-//             ToTopButton.style.display = "block";
-//         } else {
-//             ToTopButton.style.display = "none";
-//         }
-//         test.innerHTML = ySrollAxis;
-//     }
-//     ToTopButton.onclick = function () {
-//         window.scrollBy(0, -1 * window.pageYOffset);
-//     }
+// //     przyciskOdpalStoper.onclick = function () {
+// //         var poczatkowaWartosc = document.getElementById("poczatkowaWartosc").value;
+// //         uchwytStopera.innerHTML = poczatkowaWartosc;
+// //         timeIntervalRef = stopwatchInterval(uchwytStopera, poczatkowaWartosc);
+// //     };
+// //     przyciskZatrzymajStoper.onclick = function () {
+// //         clearInterval(timeIntervalRef);
+// //     };
+// // };
+// // window.onload = function () {
+// //     var ToTopButton = document.getElementById("ToTopButton");
 
-// }
-// window.onload = function () {
-//     var email = document.getElementById("email");
-//     var submitFormButton = document.querySelector("#newsletter input[type='submit']");
+// //     window.onscroll = function () {
+// //         var test = document.getElementById("test");
 
-//     submitFormButton.onclick = function (e) {
-//         var e = e || window.event;
-//         var tmp = document.getElementById("tmp");
-//         e.preventDefault();
-//         tmp.innerHTML = email.Value;
+// //         var ySrollAxis = window.pageYOffset;
+// //         if (ySrollAxis > 300) {
+// //             ToTopButton.style.display = "block";
+// //         } else {
+// //             ToTopButton.style.display = "none";
+// //         }
+// //         test.innerHTML = ySrollAxis;
+// //     }
+// //     ToTopButton.onclick = function () {
+// //         window.scrollBy(0, -1 * window.pageYOffset);
+// //     }
 
-//         this.parentNode.submit();
-//     };
-// }
+// // }
+// // window.onload = function () {
+// //     var email = document.getElementById("email");
+// //     var submitFormButton = document.querySelector("#newsletter input[type='submit']");
 
-// var produkty = [
-//     " PHP",
-//     " Mysql",
-//     " Javascript",
-//     " PDO",
-//     " Grunt.js",
-//     " SASS"
-// ];
+// //     submitFormButton.onclick = function (e) {
+// //         var e = e || window.event;
+// //         var tmp = document.getElementById("tmp");
+// //         e.preventDefault();
+// //         tmp.innerHTML = email.Value;
 
-// person = {
-//     imię: "Arek",
-//     nazwisko: "Bla",
-//     age: 24,
-// };
+// //         this.parentNode.submit();
+// //     };
+// // }
 
-// function wykonaj(event, eventObj) {
-//     //poniżej wsparcie dla eventu w każdej przeglądarce
-//     var e = event || window.event;
-//     //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce
-//     var srcElement = e.target || e.srcElement;
+// // var produkty = [
+// //     " PHP",
+// //     " Mysql",
+// //     " Javascript",
+// //     " PDO",
+// //     " Grunt.js",
+// //     " SASS"
+// // ];
 
-//     var tmp = document.getElementById("tmp");
-//     tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
+// // person = {
+// //     imię: "Arek",
+// //     nazwisko: "Bla",
+// //     age: 24,
+// // };
 
-//     // var tooltip = document.getElementById("tooltip");
-//     // tooltip.style.display = "block";
-//     // tooltip.style.left = e.clientX + 10 + "px";
-//     // tooltip.style.top = e.clienty + 10 + "px";
-// };
+// // function wykonaj(event, eventObj) {
+// //     //poniżej wsparcie dla eventu w każdej przeglądarce
+// //     var e = event || window.event;
+// //     //poniżej wsparcie dla dostępu do źródła evntu w każdej przeglądarce
+// //     var srcElement = e.target || e.srcElement;
 
-// window.onload = function () {
-//     var test = document.getElementById("test");
-//     var pogrubion = document.getElementById("pogrubion");
-//     var przycisk = document.getElementById("przycisk");
-//     test.onclick = function (event) {
-//         alert("test");
-//         wykonaj(event, this);
-//     };
-//     pogrubiony.onclick = function (event) {
-//         alert("pogrubiony");
-//     };
-//     //przycisk.onclick = function(event)
+// //     var tmp = document.getElementById("tmp");
+// //     tmp.innerHTML = "źródło eventu: " + srcElement.tagName + "<br> event przypisany do tagu: " + eventObj.tagName;
 
-//     przycisk.onclick = function (event) {
-//         var e = event || window.event;
-//         if (e.stopPropagation)
-//             e.stopPropagation();
-//         else
-//             e.cancelBubble = true;
-//         alert("przycisk");
-//     }
-// }
+// //     // var tooltip = document.getElementById("tooltip");
+// //     // tooltip.style.display = "block";
+// //     // tooltip.style.left = e.clientX + 10 + "px";
+// //     // tooltip.style.top = e.clienty + 10 + "px";
+// // };
 
-// var test = document.getElementById("test");
-// var stop = document.getElementById("stop");
+// // window.onload = function () {
+// //     var test = document.getElementById("test");
+// //     var pogrubion = document.getElementById("pogrubion");
+// //     var przycisk = document.getElementById("przycisk");
+// //     test.onclick = function (event) {
+// //         alert("test");
+// //         wykonaj(event, this);
+// //     };
+// //     pogrubiony.onclick = function (event) {
+// //         alert("pogrubiony");
+// //     };
+// //     //przycisk.onclick = function(event)
 
-// function zmienKolor() {
-//     test.className = "zmienKolor";
-// }
-// function zmienKolor2() {
-//     this.removeAttribute("class")
-//     //test.className = "fontMinus";
-// }
-// function powiekszCzcionke() {
-//     var fontSize = parseInt(window.getComputedStyle(this).fontSize);
-//     this.style.fontSize = (++fontSize) + "px";
-// }
+// //     przycisk.onclick = function (event) {
+// //         var e = event || window.event;
+// //         if (e.stopPropagation)
+// //             e.stopPropagation();
+// //         else
+// //             e.cancelBubble = true;
+// //         alert("przycisk");
+// //     }
+// // }
+
+// // var test = document.getElementById("test");
+// // var stop = document.getElementById("stop");
+
+// // function zmienKolor() {
+// //     test.className = "zmienKolor";
+// // }
+// // function zmienKolor2() {
+// //     this.removeAttribute("class")
+// //     //test.className = "fontMinus";
+// // }
+// // function powiekszCzcionke() {
+// //     var fontSize = parseInt(window.getComputedStyle(this).fontSize);
+// //     this.style.fontSize = (++fontSize) + "px";
+// // }
+// // // test.onmouseover = zmienKolor;
+// // // test.onmouseout = zmienKolor2;
+// // test.addEventListener("mouseover", zmienKolor);
+// // test.addEventListener("mouseover", powiekszCzcionke);
+// // test.addEventListener("mouseout", zmienKolor2);
+
+// // stop.addEventListener("click", function () {
+// //     test.removeEventListener("mouseover", powiekszCzcionke);
+// //});
+
+// // function fontPlus() {
+// //     test.className = "fontPlus";
+// // }
+
+// // function fontMinus() {
+// //     //this.removeAttribute("class")
+// //     test.className = "fontMinus";
+// // }
+// // var test = document.getElementById("test");
+
+// // function wypiszTekst(tekst) {
+// //     alert(tekst + "!!!!!!!!!!!!!!!!!!");
+// // }
+
 // // test.onmouseover = zmienKolor;
 // // test.onmouseout = zmienKolor2;
-// test.addEventListener("mouseover", zmienKolor);
-// test.addEventListener("mouseover", powiekszCzcionke);
-// test.addEventListener("mouseout", zmienKolor2);
 
-// stop.addEventListener("click", function () {
-//     test.removeEventListener("mouseover", powiekszCzcionke);
-//});
+// // test.onmouseover = function () {
+// //     alert("Kliknięty");
+// //     // wypiszTekst("asl;djg'g'as;dlgj");
+// // }
 
-// function fontPlus() {
-//     test.className = "fontPlus";
-// }
+// // /// tworzymy tabliczkę mnożenia
+// // var tabliczkaMnożenia = "<table>";
 
-// function fontMinus() {
-//     //this.removeAttribute("class")
-//     test.className = "fontMinus";
-// }
-// var test = document.getElementById("test");
+// // for (var i = 1; i <= 10; i++) { //ilość wierszy w tabliczce mnożenia
+// //     tabliczkaMnożenia += "<tr>";
+// //     for (var j = 1; j <= 10; j++) {//ilość kolumn w tabliczce
+// //         tabliczkaMnożenia += "<td>" + i * j + "</td>";
+// //     }
+// //     tabliczkaMnożenia += "</tr>";
+// // }
+// // tabliczkaMnożenia += "</table>";
 
-// function wypiszTekst(tekst) {
-//     alert(tekst + "!!!!!!!!!!!!!!!!!!");
-// }
+// // var rezultat = document.getElementById("rezultat");
 
-// test.onmouseover = zmienKolor;
-// test.onmouseout = zmienKolor2;
+// // rezultat.innerHTML = tabliczkaMnożenia;
 
-// test.onmouseover = function () {
-//     alert("Kliknięty");
-//     // wypiszTekst("asl;djg'g'as;dlgj");
-// }
+// // var x = document.createElement("p");
+// // x.style.color = "red";
+// // x.className = "testowa";
+// // x.innerHTML = "nowy tekst";
 
-// /// tworzymy tabliczkę mnożenia
-// var tabliczkaMnożenia = "<table>";
+// // var body = document.querySelector("body");
+// // var newChildNode = body.appendChild(x);
+// // var kursy = document.querySelectorAll("#kursyProgramowania li");
+// // for (var i = 0; i < kursy.length; i++) {
+// //     kursy[i].style.color = "red";
+// // }
 
-// for (var i = 1; i <= 10; i++) { //ilość wierszy w tabliczce mnożenia
-//     tabliczkaMnożenia += "<tr>";
-//     for (var j = 1; j <= 10; j++) {//ilość kolumn w tabliczce
-//         tabliczkaMnożenia += "<td>" + i * j + "</td>";
-//     }
-//     tabliczkaMnożenia += "</tr>";
-// }
-// tabliczkaMnożenia += "</table>";
+// // var kursy = document.querySelectorAll("#kursyProgramowania li");
+// // for (var index in kursy) {
+// //     kursy[index].style.color = "red";
+// // }
+// //alert(kursy[2].innerHTML);
 
-// var rezultat = document.getElementById("rezultat");
+// // var suma = addNumbers(3, 0, 5, 99);
 
-// rezultat.innerHTML = tabliczkaMnożenia;
+// // function addNumbers() {
+// //     var suma = 0;
+// //     for (i = 0; i < arguments.length; i++) {
+// //         suma += arguments[i];
+// //     }
+// //     return suma;
+// // }
+// // alert(suma);
+// // var rezultat = document.getElementById("rezultat");
 
-// var x = document.createElement("p");
-// x.style.color = "red";
-// x.className = "testowa";
-// x.innerHTML = "nowy tekst";
+// // var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
 
-// var body = document.querySelector("body");
-// var newChildNode = body.appendChild(x);
-// var kursy = document.querySelectorAll("#kursyProgramowania li");
-// for (var i = 0; i < kursy.length; i++) {
-//     kursy[i].style.color = "red";
-// }
+// // for (let key in kursy) {
+// //     if (typeof (kursy[key]) !== "object")
+// //         break;
+// //     alert(kursy[key]);
+// // }
 
-// var kursy = document.querySelectorAll("#kursyProgramowania li");
-// for (var index in kursy) {
-//     kursy[index].style.color = "red";
-// }
-//alert(kursy[2].innerHTML);
+// // //Pętla For
+// // for (let i = 0; i < kursy.length; i++) {
 
-// var suma = addNumbers(3, 0, 5, 99);
+// //     if (i % 2 !== 0) {
+// //         kursy[i].innerHTML = "Parzysty: " + kursy[i].innerHTML;
+// //     }else
+// //     continue;
+// //     //rezultat.innerHTML += produkty[i] + "<br>";
+// // }
 
-// function addNumbers() {
-//     var suma = 0;
-//     for (i = 0; i < arguments.length; i++) {
-//         suma += arguments[i];
-//     }
-//     return suma;
-// }
-// alert(suma);
-// var rezultat = document.getElementById("rezultat");
+// // Petla while
 
-// var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
+// // var i = 0;
+// // while (i < produkty.length) {
+// //     rezultat.innerHTML += produkty[i] + "<br>";
+// //     i++;
+// // }
 
-// for (let key in kursy) {
-//     if (typeof (kursy[key]) !== "object")
-//         break;
-//     alert(kursy[key]);
-// }
+// //var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
 
-// //Pętla For
-// for (let i = 0; i < kursy.length; i++) {
+// //var i = 0;
+// // while (0 < kursy.length) {
+// //     kursy[i].innerHTML += " Ulubion";
+// //     rezultat.innerHTML += kursy[i].innerHTML + "<br>";
+// //     i++
+// // }
 
-//     if (i % 2 !== 0) {
-//         kursy[i].innerHTML = "Parzysty: " + kursy[i].innerHTML;
-//     }else
-//     continue;
-//     //rezultat.innerHTML += produkty[i] + "<br>";
-// }
-
-// Petla while
-
-// var i = 0;
-// while (i < produkty.length) {
-//     rezultat.innerHTML += produkty[i] + "<br>";
-//     i++;
-// }
-
-//var kursy = document.getElementById("kursyProgramowania").getElementsByTagName("li");
-
-//var i = 0;
-// while (0 < kursy.length) {
-//     kursy[i].innerHTML += " Ulubion";
-//     rezultat.innerHTML += kursy[i].innerHTML + "<br>";
+// // Pętla Do While
+// // wykonuje się chociaż raz pomimo nieprawidłowego warunku
+// /*
+// var i=125;
+// do{
+//     alert(i)
 //     i++
-// }
 
-// Pętla Do While
-// wykonuje się chociaż raz pomimo nieprawidłowego warunku
-/*
-var i=125;
-do{
-    alert(i)
-    i++
+// }while (i<6)
+// */
 
-}while (i<6)
-*/
+// //Tablica liczb do sortowania
+// // var liczby = [
+// //     4, 5, -2, -7, 99, 15
+// // ];
 
-//Tablica liczb do sortowania
-// var liczby = [
-//     4, 5, -2, -7, 99, 15
-// ];
+// /*Użyteczne metody na tablicach
+// *cocncat - łączy ze sobą dwie tablice
+// *join - łączy elementy tablicy w  określony przez nas sposób (--x--) zamiast "php", "ajax" mamy "php"--x--"ajax"
+// *pop usuwa ostatni element z tablicy i zwraca go do dalszych operacji
+// *push popchnąć element na koniec tablicy i zwróci jej długość
+// *shift - usuwa pierwszy element z tablicy i zraca go
+// *unshift - przesuwa wszystko o jeden i dodaje na początku nowy element
+// * sort  - sortuje elementy tablicy tylko stringi
+//     Liczby trzeba posortować po przez przesłanie funkcji anonimowej
+//     liczby.sort(function (a, b) { return a - b; });
+//     a-b  sortuje rosnąco, gdy b-a malejąco
+//  *reverse - odwróć kolejność tablicy
+//  * slice (1,3) - oznacza wycięcie od 1 ale bez niego do 3 włącznie
+//  * splice (1,3) - oznacza wycięcie od 1, a drugi oznacza ile elementów do wycięcia
+//   */
 
-/*Użyteczne metody na tablicach
-*cocncat - łączy ze sobą dwie tablice
-*join - łączy elementy tablicy w  określony przez nas sposób (--x--) zamiast "php", "ajax" mamy "php"--x--"ajax"
-*pop usuwa ostatni element z tablicy i zwraca go do dalszych operacji
-*push popchnąć element na koniec tablicy i zwróci jej długość
-*shift - usuwa pierwszy element z tablicy i zraca go
-*unshift - przesuwa wszystko o jeden i dodaje na początku nowy element
-* sort  - sortuje elementy tablicy tylko stringi
-    Liczby trzeba posortować po przez przesłanie funkcji anonimowej
-    liczby.sort(function (a, b) { return a - b; });
-    a-b  sortuje rosnąco, gdy b-a malejąco
- *reverse - odwróć kolejność tablicy
- * slice (1,3) - oznacza wycięcie od 1 ale bez niego do 3 włącznie
- * splice (1,3) - oznacza wycięcie od 1, a drugi oznacza ile elementów do wycięcia
-  */
+// // var tmp = ["ajax"];
+// // //document.getElementById("rezultat").innerHTML = produkty.length;
+// // //document.getElementById("rezultat").innerHTML = produkty.unshift("ajax");
+// // document.getElementById("rezultat").innerHTML = produkty.sort();
 
-// var tmp = ["ajax"];
-// //document.getElementById("rezultat").innerHTML = produkty.length;
-// //document.getElementById("rezultat").innerHTML = produkty.unshift("ajax");
-// document.getElementById("rezultat").innerHTML = produkty.sort();
+// // document.getElementById("rezultat").innerHTML = liczby.sort(function (a, b) { return a - b; });
 
-// document.getElementById("rezultat").innerHTML = liczby.sort(function (a, b) { return a - b; });
+// // document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
+// // //document.getElementById("rezultat").innerHTML = produkty.push("gulp");
 
-// document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
-// //document.getElementById("rezultat").innerHTML = produkty.push("gulp");
+// // document.getElementById("rezultat").innerHTML += produkty;
+// // document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
+// // document.getElementById("rezultat").innerHTML = produkty.unshift("Less");
+// // document.getElementById("rezultat").innerHTML += produkty;
+// //produkty[3] = "PDO";
 
-// document.getElementById("rezultat").innerHTML += produkty;
-// document.getElementById("rezultat").innerHTML += "<br>---------------------------------<br>";
-// document.getElementById("rezultat").innerHTML = produkty.unshift("Less");
-// document.getElementById("rezultat").innerHTML += produkty;
-//produkty[3] = "PDO";
+// // var element = document.getElementById("kursyProgramowania");
 
-// var element = document.getElementById("kursyProgramowania");
+// // element.innerHTML = produkty;
 
-// element.innerHTML = produkty;
+// //produkty.push("PDO");
 
-//produkty.push("PDO");
+// //var produkty = new Array();
 
-//var produkty = new Array();
+// //alert(produkty);
 
-//alert(produkty);
+// //  tablice asocjacyjne to rodzaj tablic gdzie zamiast indeksu jest string
+// //ASSOCIATIVE ARRAYS
 
-//  tablice asocjacyjne to rodzaj tablic gdzie zamiast indeksu jest string
-//ASSOCIATIVE ARRAYS
+// // var osoba = [];
+// // osoba["imie"] = "Arek";
+// // osoba["nazwisko"] = "Nazwisko";
+// // //alert(osoba); //lub
+// // //alert(osoba.imie);
 
-// var osoba = [];
-// osoba["imie"] = "Arek";
-// osoba["nazwisko"] = "Nazwisko";
-// //alert(osoba); //lub
-// //alert(osoba.imie);
+// // var ul = document.getElementById("kursyTworzeniaStronWWW");
+// // var liArray = document.getElementsByTagName("li");
+// // //alert(liArray[2].innerHTML);
 
-// var ul = document.getElementById("kursyTworzeniaStronWWW");
-// var liArray = document.getElementsByTagName("li");
-// //alert(liArray[2].innerHTML);
+// // var kursyProgramowania = document.getElementsByTagName("li");
+// // alert(kursyProgramowania[6].innerHTML);
 
-// var kursyProgramowania = document.getElementsByTagName("li");
-// alert(kursyProgramowania[6].innerHTML);
+// // div.innerHTML = "nowa treść";
 
-// div.innerHTML = "nowa treść";
+// // var osoba = {
+// //     imie: "Bartek",
+// //     nazwisko: "Kurek",
+// //     wiek: "42",
+// //     pobinfo: function () {
+// //         return this.imie + " " + this.nazwisko + " Twój wiek to " + this.wiek;
+// //     }
 
-// var osoba = {
-//     imie: "Bartek",
-//     nazwisko: "Kurek",
-//     wiek: "42",
-//     pobinfo: function () {
-//         return this.imie + " " + this.nazwisko + " Twój wiek to " + this.wiek;
-//     }
-
-// };
+// // };
