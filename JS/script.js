@@ -1,9 +1,71 @@
-window.onload = function() {
-  let info = document.getElementById("info");
-  let ToDay = new Date();
+function Clock(elementHandler) {
+  this.elementHandler = elementHandler;
+  this.actualDate = new Date();
 
-  info.innerHTML = ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
+  this.start = function() {
+    this.updateElementHandlerContent();
+    var self = this;
+    setInterval(function() {
+      self.addSeccond();
+      self.updateElementHandlerContent();
+    }, 1000);
+  };
+
+  this.addSeccond = function() {
+    this.actualDate = new Date();
+  };
+  this.updateElementHandlerContent = function() {
+    this.elementHandler.innerHTML = this.actualDate.toLocaleTimeString();
+  };
+}
+
+window.onload = function() {
+  var info = document.getElementById("info");
+  var clock = new Clock(info);
+  clock.start();
+
+  //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
+  // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
 };
+
+// function getMonthFromNumber(monthNumber) {
+//   let months = [
+//     "Styczeń",
+//     "Luty",
+//     "Marzec",
+//     "Kwiecień",
+//     "Maj",
+//     "Czerwiec",
+//     "Lipiec",
+//     "Sierpień",
+//     "Wrzesień",
+//     "Październik",
+//     "Listopad",
+//     "Grudzień"
+//   ];
+//   return months[monthNumber];
+// }
+// function getDaysOfWeekNumber(dayNumber) {
+//   let daysWeek = [
+//     "Niedziela",
+//     "Poniedziałek",
+//     "Wtorek",
+//     "Środa",
+//     "Czwartek",
+//     "Piątek",
+//     "Sobota"
+//   ];
+//   return daysWeek[dayNumber];
+// }
+// window.onload = function() {
+//   let info = document.getElementById("info");
+//   let ToDay = new Date();
+//   let dniTygodniaPL = getDaysOfWeekNumber(ToDay.getDay());
+//   info.innerHTML = dniTygodniaPL; //ToDay.toLocaleDateString();
+
+//   //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
+//   // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
+// };
 //   // let indeksy = " A-56 B-12 K-51 A-53";
 //   // let imie = "Daąśrek";
 //   // let d = "ALAArkadiusz";
