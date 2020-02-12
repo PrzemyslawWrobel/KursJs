@@ -1,9 +1,14 @@
 window.onload = function() {
   var info = document.getElementById("info");
   let x = 20.019;
-  info.innerHTML = x.toFixed(2);
+  let cytat = ["lorem", "ipsum", "dolor", "mite"];
+  let autor = ["lorem", "ipsum", "dolor", "mite"];
+  let losowaLiczba = Math.floor(Math.random() * 4);
   //let miesiacePL = getMonthFromNumber(ToDay.getMonth());
   // info.innerHTML = miesiacePL; //ToDay.toLocaleDateString(); //getDay() + " " + (ToDay.getMonth() + 1) + " " + ToDay.getFullYear();
+
+  info.innerHTML = cytat[losowaLiczba] + "</br>" + autor[losowaLiczba];
+  // let cytat = document.getElementById("cytat");
 };
 
 // function Clock(elementHandler) {
