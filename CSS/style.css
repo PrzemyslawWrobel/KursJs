@@ -1,51 +1,64 @@
-
-
+.thumbnail {
+  width: 60px;
+}
+.thumbnail:hover {
+  border-bottom: 2px solid red;
+  margin: -2px;
+}
+#mainImage {
+  width: 350px;
+  height: 263px;
+  margin-bottom: 10px;
+}
+.current {
+  border-bottom: 2px solid red;
+  margin: -2px;
+}
 
 #ToTopButton {
-    background-color: teal;
-   width:  150px;
-    height: 30px;
-    padding: 10px;
-     position: fixed;
-     bottom: 20px;
-     right: 200px;
-     cursor: pointer;
-     display: none;
+  background-color: teal;
+  width: 150px;
+  height: 30px;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 200px;
+  cursor: pointer;
+  display: none;
 }
-#ToTopButton:hover{
-    color: red; 
+#ToTopButton:hover {
+  color: red;
 }
 
 .zmienKolor {
-    color: red;
+  color: red;
 }
 
-.fontPlus{
-    font-size: 22px;
+.fontPlus {
+  font-size: 22px;
 }
 
-.fontMinus{
-    font-size: 12px;
+.fontMinus {
+  font-size: 12px;
 }
-#tooltip{
-    display: none;
-    background-color: teal;
-    position: absolute;
-    width:  150;
-    height: 70;
+#tooltip {
+  display: none;
+  background-color: teal;
+  position: absolute;
+  width: 150;
+  height: 70;
 }
 
 #test {
-    background-color: red;
-    height: 300px;
-    width: 600px;
+  background-color: red;
+  height: 300px;
+  width: 600px;
 }
 #pogrubiony {
-background-color: yellow;
-height: 300px;
-    width: 600px;
+  background-color: yellow;
+  height: 300px;
+  width: 600px;
 }
-#przycisk{
-
-    background-color: teal;
+#przycisk {
+  background-color: teal;
 }
